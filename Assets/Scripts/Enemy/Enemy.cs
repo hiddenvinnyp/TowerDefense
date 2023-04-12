@@ -26,14 +26,12 @@ namespace TowerDefence
         }
         public void DamagePlayer()
         {
-            Debug.Log($"Player takes {m_Damage}");
-            Player.Instance.TakeDamage(m_Damage);
+            TDPlayer.Instance.ReduceLife(m_Damage);
         }
 
         public void GivePlayerGold()
         {
-            Debug.Log($"Player get {m_Gold} gold");
-            (Player.Instance as TDPlayer).ChangeGold(m_Gold);
+            TDPlayer.Instance.ChangeGold(m_Gold);
         }
     }
 

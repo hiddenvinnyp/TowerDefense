@@ -5,6 +5,7 @@ namespace SpaceShooter
     public class Player : SingletonBase<Player>
     {
         [SerializeField] private int m_NumLives;
+        public int NumLives => m_NumLives;
         private SpaceShip m_Ship;
         //[SerializeField] private SpaceShip m_PlayerShipPrefab;
         public SpaceShip ActiveShip => m_Ship;
@@ -39,10 +40,10 @@ namespace SpaceShooter
             }
         }
 
-        internal void TakeDamage(int m_Damage)
+        public void TakeDamage(int m_Damage)
         {
             m_NumLives -= m_Damage;
-            if (m_NumLives <= 0)
+            if (m_NumLives < 0)
             {
                 LevelSequenceController.Instance.FinishCurrentLevel(false);
             }
