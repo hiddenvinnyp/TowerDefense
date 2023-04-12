@@ -15,5 +15,7 @@ namespace TowerDefence
         public int Hitpoints;
         public int Score;
         public float ColliderRadius;
+        public int Damage = 1;
+        public int Gold = 1;
     }
 }

@@ -1,10 +1,12 @@
 using SpaceShooter;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TowerDefence
 {
     public class PathPatrol : AIController
     {
+        [SerializeField] private UnityEvent OnEndPath;
         private Path m_Path;
         private int m_Index;
 
@@ -22,8 +24,8 @@ namespace TowerDefence
                 SetPatrolBehavior(m_Path[m_Index]);
             } else
             {
+                OnEndPath.Invoke();
                 Destroy(gameObject);
-                //уменьшать здоровье игрока
             }
         }
     }

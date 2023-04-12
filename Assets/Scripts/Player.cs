@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SpaceShooter
 {
@@ -24,7 +23,7 @@ namespace SpaceShooter
 
         private void Start()
         {
-            Respawn();
+                Respawn();
         }
 
         private void OnShipDeath()
@@ -37,6 +36,15 @@ namespace SpaceShooter
             } else
             {
                 LevelSequenceController.Instance.FinishCurrentLevel(false); // Exit to Main menu
+            }
+        }
+
+        internal void TakeDamage(int m_Damage)
+        {
+            m_NumLives -= m_Damage;
+            if (m_NumLives <= 0)
+            {
+                LevelSequenceController.Instance.FinishCurrentLevel(false);
             }
         }
 
@@ -55,12 +63,12 @@ namespace SpaceShooter
                 {
                     transform.SetTarget(m_Ship.transform);
                 }*/
-
-                m_Ship.EventOnDeath.AddListener(OnShipDeath);
+                if (m_Ship)
+                    m_Ship.EventOnDeath.AddListener(OnShipDeath);
             }
         }
 
-        #region Score
+        #region Score on current level only
         public int Score { get; private set; }
         public int NumKill { get; private set; }
 

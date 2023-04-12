@@ -19,3 +19,5 @@ MonoBehaviour:
   Hitpoints: 15
   Score: 10
   ColliderRadius: 0.2
+  Damage: 2
+  Gold: 2
