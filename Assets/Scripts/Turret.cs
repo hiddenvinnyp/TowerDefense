@@ -9,6 +9,7 @@ namespace SpaceShooter
         public TurretMode Mode => m_Mode;
 
         [SerializeField] private TurretProperties m_TurretProperties;
+        public TurretProperties TurretProperties { set { m_TurretProperties = value; } }
 
         /// <summary>
         /// Cooldown
