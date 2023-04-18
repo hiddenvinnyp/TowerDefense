@@ -10,10 +10,9 @@ namespace TowerDefence
         [SerializeField] private TextMeshProUGUI m_Text;
         [SerializeField] private Button m_BuyButton;
         [SerializeField] private Transform m_BuildPlace;
-        public Transform BuildPlace { set { m_BuildPlace = value; } }
-
-        private void Awake()
-        {
+        public void SetBuildPlace(Transform value) 
+        { 
+            m_BuildPlace = value; 
         }
 
         private void Start()
@@ -35,6 +34,7 @@ namespace TowerDefence
         public void Buy()
         {
             TDPlayer.Instance.TryBuild(m_TowerAsset, m_BuildPlace);
+            BuildPlace.HideControls();
         }
     }
 }
