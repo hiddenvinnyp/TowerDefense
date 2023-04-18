@@ -27,7 +27,8 @@ namespace SpaceShooter
 
         public void RestartLevel()
         {
-            SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
+            //SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
+            SceneManager.LoadScene(0);
         }
 
         public void FinishCurrentLevel(bool success)
