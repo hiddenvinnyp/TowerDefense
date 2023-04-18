@@ -1,3 +1,4 @@
+using TowerDefence;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -74,8 +75,13 @@ namespace SpaceShooter
         {
             // тут спавнить взрыв
             if (m_ImpactEffectPrefab != null)
-                Instantiate(m_ImpactEffectPrefab, new Vector3(position.x, position.y, 0), Quaternion.identity);
-
+            {
+                GameObject effect = Instantiate(m_ImpactEffectPrefab, new Vector3(position.x, position.y, 0), Quaternion.identity);
+                if (effect.GetComponent<Freeze>())
+                {
+                    effect.GetComponent<Freeze>().SetTarget(collider.transform.root.GetComponent<Destructible>());
+                }
+            }
             if (m_IsAOE)
                 SpawnAreaDamage(position);
 
