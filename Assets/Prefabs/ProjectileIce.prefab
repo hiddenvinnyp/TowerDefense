@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Nickname: 
   m_Velocity: 10
   m_Lifetime: 1
-  m_Damage: 1
+  m_Damage: 2
   m_ImpactEffectPrefab: {fileID: 1113985142812024947, guid: 87da80a39c464654fa76c0c0cf07bdd5, type: 3}
   m_IsAOE: 0
   m_AOEPrefab: {fileID: 0}

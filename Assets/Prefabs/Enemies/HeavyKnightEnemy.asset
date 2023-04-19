@@ -15,9 +15,9 @@ MonoBehaviour:
   Color: {r: 1, g: 1, b: 1, a: 1}
   SpriteScale: {x: 2.5, y: 2.5}
   AnimatorController: {fileID: 9100000, guid: e8e86bbfdcf98c64d8a0815b4042f2ad, type: 2}
-  MoveSpeed: 1
+  MoveSpeed: 0.9
   Hitpoints: 15
   Score: 10
   ColliderRadius: 0.2
   Damage: 2
-  Gold: 2
+  Gold: 4

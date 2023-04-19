@@ -15,6 +15,8 @@ namespace TowerDefence {
         [SerializeField] private int m_NumSpawns;
         [SerializeField] private float m_RespawnTime;
 
+        public int NumSpawns { get;  private set; }
+
         protected abstract GameObject m_GenerateSpawnedEntity();
 
         private float m_Timer;
@@ -45,6 +47,7 @@ namespace TowerDefence {
             {
                 var entity = m_GenerateSpawnedEntity();
                 entity.transform.position = m_Area.GetRandomInsideZone();
+                NumSpawns++;
             }
         }
     } 
