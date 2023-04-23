@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 namespace SpaceShooter
 {
+    /// <summary>
+    /// Контроллер перехода между уровнями. Должен быть с пометкой DoNotDestroyOnLoad.
+    /// </summary>
     public class LevelSequenceController : SingletonBase<LevelSequenceController>
     {
         public static string MainMenuSceneName = "Main_menu";
@@ -34,9 +37,9 @@ namespace SpaceShooter
         public void FinishCurrentLevel(bool success)
         {
             LastLevelResult = success;
-            CalculateLevelStatistic();
+            //CalculateLevelStatistic();
 
-            ResultPanelController.Instance.ShowResults(LevelStatistics, success);
+            ResultPanelController.Instance.ShowResults(success);
 
             // Save stats
             //SaveSystem.Instance.Load();
@@ -58,7 +61,7 @@ namespace SpaceShooter
 
         public void AdvanceLevel()
         {
-            LevelStatistics.ResetStats();
+            //LevelStatistics.ResetStats();
 
             CurrentLevel++;
 

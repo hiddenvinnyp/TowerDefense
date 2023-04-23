@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,7 +15,7 @@ namespace SpaceShooter
         [SerializeField] private int m_ReferenceTime;
         public int ReferenceTime => m_ReferenceTime;
 
-        [SerializeField] private UnityEvent m_EventLevelCompleted;
+        [SerializeField] protected UnityEvent m_EventLevelCompleted;
 
         private ILevelCondition[] m_Conditions;
         public ILevelCondition[] Tasks => m_Conditions;
@@ -22,7 +23,7 @@ namespace SpaceShooter
         private float m_LevelTime;
         public float LevelTime => m_LevelTime;
 
-        private void Start()
+        protected void Start()
         {
             m_Conditions = GetComponentsInChildren<ILevelCondition>();
         }

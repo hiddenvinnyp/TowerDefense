@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 6994086441038396500}
   - component: {fileID: 6994086441038396503}
   m_Layer: 5
-  m_Name: TowerBuyControl
+  m_Name: IceTowerBuyControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,7 +447,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6994086441038396501}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b39f3c91e74f04998cc8779b25796b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TowerAsset: {fileID: 11400000, guid: 86270bd40c2e75e4f863f80f0256e287, type: 2}
+  m_TowerAsset: {fileID: 11400000, guid: 449426297336d2d4fba6674e1c94b726, type: 2}
   m_Text: {fileID: 6994086439728841902}
   m_BuyButton: {fileID: 6994086440255510554}
-  m_BuildPlace: {fileID: 0}
+  m_BuildPlace: {fileID: 6225741003503020599, guid: f209f838ba81c96468f9c7b00a9249b9, type: 3}

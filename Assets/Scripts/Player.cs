@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace SpaceShooter
 {
@@ -6,6 +7,9 @@ namespace SpaceShooter
     {
         [SerializeField] private int m_NumLives;
         public int NumLives => m_NumLives;
+
+        public event Action OnPlayerDead;
+
         private SpaceShip m_Ship;
         //[SerializeField] private SpaceShip m_PlayerShipPrefab;
         public SpaceShip ActiveShip => m_Ship;
@@ -43,10 +47,12 @@ namespace SpaceShooter
         public void TakeDamage(int m_Damage)
         {
             m_NumLives -= m_Damage;
-            if (m_NumLives < 0)
+            if (m_NumLives <= 0)
             {
+                m_NumLives = 0;
+                OnPlayerDead?.Invoke();
+                //LevelController.Instance.EndLevel(false);
                 //LevelSequenceController.Instance.FinishCurrentLevel(false);
-                LevelSequenceController.Instance.RestartLevel();
             }
         }
 

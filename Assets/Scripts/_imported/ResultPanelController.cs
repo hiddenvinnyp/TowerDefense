@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +11,8 @@ namespace SpaceShooter
         [SerializeField] private Text m_TimeAmount;
         [SerializeField] private Text m_TimeBonus;
 
-        [SerializeField] private Text m_Result;
-        [SerializeField] private Text m_ButtonNextText;
+        [SerializeField] private TextMeshProUGUI m_Result;
+        [SerializeField] private TextMeshProUGUI m_ButtonNextText;
 
         // Определять поведение кнопки: если успешно завершили уровень, то следующий;
         // если нет, то рестарт текущего уровня.
@@ -20,6 +21,15 @@ namespace SpaceShooter
         private void Start()
         {
             gameObject.SetActive(false);
+        }
+
+        public void ShowResults(bool success)
+        {
+            gameObject.SetActive(true);
+
+            m_Success = success;
+            m_Result.text = success ? "Win" : "Lose";
+            m_ButtonNextText.text = success ? "Next" : "Restart";
         }
 
         public void ShowResults(PlayerStatistics levelResults, bool success)
