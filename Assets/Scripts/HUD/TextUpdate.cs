@@ -31,5 +31,11 @@ namespace TowerDefence
         {
             m_Text.text = points.ToString();
         }
+
+        private void OnDestroy()
+        {
+            TDPlayer.GoldUpdateUnSubscribe(UpdateText);
+            TDPlayer.LifeUpdateUnSubscribe(UpdateText);
+        }
     }
 }

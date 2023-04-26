@@ -5,6 +5,7 @@ namespace TowerDefence
 {
     public class TDLevelController : LevelController
     {
+        public int LevelScore => 1;
         private new void Start()
         {
             base.Start();
@@ -13,7 +14,11 @@ namespace TowerDefence
                 StopLevelActivity();
                 ResultPanelController.Instance.ShowResults(false);
             };
-            m_EventLevelCompleted.AddListener(StopLevelActivity);
+            m_EventLevelCompleted.AddListener(() => 
+            {
+                StopLevelActivity();
+                MapComplition.SaveEpisodeResult(LevelScore);
+            });
         }
 
         private void StopLevelActivity()

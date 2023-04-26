@@ -13,11 +13,22 @@ namespace TowerDefence
             OnGoldUpdate += action;
             action(Instance.m_Gold);
         }
+
+        public static void GoldUpdateUnSubscribe(Action<int> action)
+        {
+            OnGoldUpdate -= action;
+        }
+
         private static event Action<int> OnLifeUpdate;
         public static void LifeUpdateSubscribe(Action<int> action)
         {
             OnLifeUpdate += action;
             action(Instance.NumLives);
+        }
+
+        public static void LifeUpdateUnSubscribe(Action<int> action)
+        {
+            OnLifeUpdate -= action;
         }
 
         [SerializeField] private int m_Gold;
