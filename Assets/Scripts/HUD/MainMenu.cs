@@ -27,6 +27,7 @@ namespace TowerDefence {
                 }
             } else
             {
+                
                 SceneManager.LoadScene(1);
             }            
         }
