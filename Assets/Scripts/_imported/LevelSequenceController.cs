@@ -77,8 +77,8 @@ namespace SpaceShooter
         private void CalculateLevelStatistic()
         {
             LevelStatistics.Time = LevelController.Instance.LevelTime;
-            LevelStatistics.TimeBonus = CalculateTimeBonus(LevelController.Instance.LevelTime);
-            LevelStatistics.Score = Player.Instance.Score + Player.Instance.Score * LevelStatistics.TimeBonus;
+            LevelStatistics.TimeBonus = LevelController.Instance.ReferenceTime - LevelController.Instance.LevelTime;
+            LevelStatistics.Score = Player.Instance.Score + (int)LevelStatistics.TimeBonus;
             LevelStatistics.NumKills = Player.Instance.NumKill;
         }
 

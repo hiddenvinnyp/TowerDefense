@@ -7,7 +7,7 @@ namespace SpaceShooter
         public int NumKills;
         public int Score;
         public float Time;
-        public int TimeBonus;
+        public float TimeBonus;
 
         public void ResetStats()
         {

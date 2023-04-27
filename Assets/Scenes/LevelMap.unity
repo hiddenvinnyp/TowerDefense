@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8b3cff8d2ab9347ad2ec519e598299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DoNotDestroyOnLoad: 0
+  m_DoNotDestroyOnLoad: 1
   m_ComplitionData:
   - Episode: {fileID: 11400000, guid: e70125a105118954eada35b1db3c20dd, type: 2}
     Score: 0

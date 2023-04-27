@@ -19,7 +19,7 @@ namespace TowerDefence
             OnGoldUpdate -= action;
         }
 
-        private static event Action<int> OnLifeUpdate;
+        public static event Action<int> OnLifeUpdate;
         public static void LifeUpdateSubscribe(Action<int> action)
         {
             OnLifeUpdate += action;

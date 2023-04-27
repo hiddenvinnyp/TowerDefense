@@ -5,7 +5,8 @@ namespace TowerDefence
 {
     public class TDLevelController : LevelController
     {
-        public int LevelScore => 1;
+        private int m_LevelScore = 3;
+
         private new void Start()
         {
             base.Start();
@@ -14,11 +15,25 @@ namespace TowerDefence
                 StopLevelActivity();
                 ResultPanelController.Instance.ShowResults(false);
             };
+
+            m_ReferenceTime += Time.time;
             m_EventLevelCompleted.AddListener(() => 
             {
                 StopLevelActivity();
-                MapComplition.SaveEpisodeResult(LevelScore);
+                if (m_ReferenceTime <= Time.time)
+                {
+                    m_LevelScore--;
+                }
+                MapComplition.SaveEpisodeResult(m_LevelScore);
             });
+
+            //локальная функция
+            void LifeScoreChange(int _) // _ - параметр, который не используется
+            {
+                m_LevelScore--;
+                TDPlayer.OnLifeUpdate -= LifeScoreChange;
+            }
+            TDPlayer.OnLifeUpdate += LifeScoreChange;
         }
 
         private void StopLevelActivity()
