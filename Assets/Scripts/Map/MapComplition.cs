@@ -1,6 +1,7 @@
 using SpaceShooter;
 using System;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 namespace TowerDefence
 {
@@ -24,24 +25,17 @@ namespace TowerDefence
         }
 
         [SerializeField] private EpisodeScore[] m_ComplitionData;
+        private int m_TotalScore;
+        public int TotalScore => m_TotalScore;
 
         private new void Awake()
         {
             base.Awake();
             Saver<EpisodeScore[]>.TryLoad(filename, ref m_ComplitionData);
-        }
-
-        public bool TryIndex(int id, out Episode episode, out int score)
-        {
-            if (id >= 0 && id < m_ComplitionData.Length)
+            foreach (var episodeScore in m_ComplitionData)
             {
-                episode = m_ComplitionData[id].Episode;
-                score = m_ComplitionData[id].Score;
-                return true;
+                m_TotalScore += episodeScore.Score;
             }
-            episode = null;
-            score = 0;
-            return false;
         }
 
         private void SaveResult(Episode currentEpisode, int levelScore)
@@ -57,6 +51,18 @@ namespace TowerDefence
                     }
                 }
             }
+        }
+
+        public int GetEpisodeScore(Episode m_Episode)
+        {
+            foreach (var data in m_ComplitionData)
+            {
+                if (data.Episode == m_Episode)
+                {
+                    return data.Score;
+                }
+            }
+            return 0;
         }
     }
 }

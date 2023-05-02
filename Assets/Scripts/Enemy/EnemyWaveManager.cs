@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.VersionControl;
 using UnityEngine;
 
@@ -5,9 +6,20 @@ namespace TowerDefence
 {
     public class EnemyWaveManager : MonoBehaviour
     {
+        public event Action OnAllWavesDead;
+
         [SerializeField] private Enemy m_EnemyPrefab;
         [SerializeField] private Path[] m_Paths;
         [SerializeField] private EnemyWave m_CurrentWave;
+        private int m_ActiveEnemyCount = 0;
+
+        private void RecordEnemyDead()
+        {
+            if (--m_ActiveEnemyCount == 0)
+            {
+                    ForceNextWave();              
+            }
+        }
 
         private void Start()
         {
@@ -23,8 +35,10 @@ namespace TowerDefence
                     for (int i = 0; i < count; i++)
                     {
                         var enemy = Instantiate(m_EnemyPrefab, m_Paths[pathIndex].StartArea.GetRandomInsideZone(), Quaternion.identity);
+                        enemy.OnEnd += RecordEnemyDead;
                         enemy.Use(asset);
                         enemy.GetComponent<PathPatrol>().SetPath(m_Paths[pathIndex]);
+                        m_ActiveEnemyCount++;
                     }
                 }
                 else
@@ -34,6 +48,20 @@ namespace TowerDefence
             }
 
             m_CurrentWave = m_CurrentWave.PrepareNext(SpawnEnemies);
+        }
+
+        public void ForceNextWave()
+        {
+            if (m_CurrentWave)
+            {
+                TDPlayer.Instance.ChangeGold((int)m_CurrentWave.GetRemainingTime);
+                SpawnEnemies();
+            }
+            else
+            {
+                if (m_ActiveEnemyCount == 0)
+                    OnAllWavesDead?.Invoke();
+            }
         }
     }
 }
