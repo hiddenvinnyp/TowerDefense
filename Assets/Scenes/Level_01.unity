@@ -597,6 +597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 230223278}
   - component: {fileID: 230223277}
+  - component: {fileID: 230223279}
   m_Layer: 0
   m_Name: LevelManagers
   m_TagString: Untagged
@@ -616,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33491979743b23648b4f81a2a141ec14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DoNotDestroyOnLoad: 1
+  m_DoNotDestroyOnLoad: 0
 --- !u!4 &230223278
 Transform:
   m_ObjectHideFlags: 0
@@ -632,6 +633,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &230223279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230223276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985ea9183f0d91c4e896488631662b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DoNotDestroyOnLoad: 0
+  m_Saves:
+  - Asset: {fileID: 11400000, guid: a28e69431e3bf3d448ff6a67d40c07d0, type: 2}
+    Level: 0
+  - Asset: {fileID: 11400000, guid: 3268df020b278064f9462e5cbc7da853, type: 2}
+    Level: 0
 --- !u!1 &328819964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1874,7 @@ MonoBehaviour:
   m_NumLives: 10
   m_Gold: 80
   m_TowerPrefab: {fileID: 36026128587894391, guid: 7d650440ffe56c145aeea8b6c69c0f73, type: 3}
+  m_HealthUpgrade: {fileID: 11400000, guid: a28e69431e3bf3d448ff6a67d40c07d0, type: 2}
 --- !u!1001 &1645058894
 PrefabInstance:
   m_ObjectHideFlags: 0

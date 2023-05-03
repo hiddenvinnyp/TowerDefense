@@ -57,5 +57,13 @@ namespace TowerDefence
                 Destroy(buildPlace.gameObject);
             }
         }
+
+        [SerializeField] private UpgradeAsset m_HealthUpgrade;
+        private new void Awake()
+        {
+            base.Awake();
+            var level = Upgrades.GetUpdateLevel(m_HealthUpgrade);
+            TakeDamage(-level * 5);
+        }
     }
 }
