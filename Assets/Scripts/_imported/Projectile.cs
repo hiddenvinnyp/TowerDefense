@@ -13,6 +13,9 @@ namespace SpaceShooter
         [SerializeField] private bool m_IsAOE;
         [SerializeField] private GameObject m_AOEPrefab;
 
+        [SerializeField] private UpgradeAsset m_VelocityUpgrade;
+        [SerializeField] private float m_VelocityUpgradeFactor = 1;
+
         protected float m_Timer;
         protected Destructible m_Parent;
 
@@ -28,6 +31,15 @@ namespace SpaceShooter
         public void SetTarget(Destructible target)
         {
 
+        }
+
+        private void Start()
+        {
+            if (m_VelocityUpgrade)
+            {
+                var level = Upgrades.GetUpdateLevel(m_VelocityUpgrade);
+                m_Velocity += level * m_VelocityUpgradeFactor;
+            }
         }
 
         private void Update()

@@ -136,3 +136,5 @@ MonoBehaviour:
   m_ImpactEffectPrefab: {fileID: 1113985142812024947, guid: 87da80a39c464654fa76c0c0cf07bdd5, type: 3}
   m_IsAOE: 0
   m_AOEPrefab: {fileID: 0}
+  m_VelocityUpgrade: {fileID: 11400000, guid: a8b7b6364a26d4049a7dbe6f3c37ed93, type: 2}
+  m_VelocityUpgradeFactor: 1

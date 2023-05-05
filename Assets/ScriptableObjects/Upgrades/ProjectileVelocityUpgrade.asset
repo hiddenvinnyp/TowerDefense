@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a01b321a085c0c4a82ba2e09d108f8b, type: 3}
-  m_Name: FireRangeUpgrade
+  m_Name: ProjectileVelocityUpgrade
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: b0d3f0389323e824499fcf065dd70e8d, type: 3}
+  Icon: {fileID: 21300000, guid: ef25b92a8e4b2644b8420de820e6c11f, type: 3}
   CostByLevel: 03000000030000000400000005000000

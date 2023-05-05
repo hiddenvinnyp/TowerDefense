@@ -7,6 +7,7 @@ namespace TowerDefence
     public class EnemyWave : MonoBehaviour
     {
         public static Action<float> OnWavePrepare;
+        public static Action OnLastWave;
 
         [Serializable]
         private class Squad
@@ -63,8 +64,9 @@ namespace TowerDefence
         public EnemyWave PrepareNext(Action spawnEnemies)
         {
             OnWaveReady -= spawnEnemies;
-            if (m_NextWave) 
+            if (m_NextWave)
                 m_NextWave.Prepare(spawnEnemies);
+            else OnLastWave?.Invoke();
             return m_NextWave;
         }
     }

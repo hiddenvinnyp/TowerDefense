@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Radius: 1.5
+  m_RadiusUpgrade: {fileID: 11400000, guid: 3268df020b278064f9462e5cbc7da853, type: 2}
+  m_RadiusUpgradeFactor: 0.2
   m_GizmosColor: {r: 0.8, g: 0.20784311, b: 0.7214976, a: 0.44705883}
 --- !u!1 &36026128927779954
 GameObject:
@@ -94,6 +96,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mode: 0
   m_TurretProperties: {fileID: 11400000, guid: 1df4038f631ce32429239c489b417e0d, type: 2}
+  m_RateofFireUpgrade: {fileID: 11400000, guid: 5be39525eee076b468fcc425f38669a4, type: 2}
+  m_RateofFireUpgradeFactor: 0.03
+  m_MinUpgradeFactor: 0.01
 --- !u!1 &36026129084389011
 GameObject:
   m_ObjectHideFlags: 0

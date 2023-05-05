@@ -1,3 +1,4 @@
+using TowerDefence;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -10,6 +11,11 @@ namespace SpaceShooter
 
         [SerializeField] private TurretProperties m_TurretProperties;
         public TurretProperties TurretProperties { set { m_TurretProperties = value; } }
+
+        [SerializeField] private UpgradeAsset m_RateofFireUpgrade;
+        [SerializeField] private float m_RateofFireUpgradeFactor = 0.01f;
+        [SerializeField] private float m_MinUpgradeFactor = 0.01f;
+        private float m_RateUpgradeFactor = 1;
 
         /// <summary>
         /// Cooldown
@@ -26,7 +32,15 @@ namespace SpaceShooter
         {
             m_Ship = transform.root.GetComponent<SpaceShip>();
 
-            m_FireSound = m_TurretProperties.LaunchSFX;           
+            m_FireSound = m_TurretProperties.LaunchSFX;      
+            
+            if (m_RateofFireUpgrade)
+            {
+                var level = Upgrades.GetUpdateLevel(m_RateofFireUpgrade);
+                m_RateUpgradeFactor -= level * m_RateofFireUpgradeFactor;
+                if (m_RateUpgradeFactor <= 0)
+                    m_RateUpgradeFactor = m_MinUpgradeFactor;
+            }
         }
 
         private void Update()
@@ -58,7 +72,8 @@ namespace SpaceShooter
             if (m_Ship)
                 projectile.SetParentShooter(m_Ship);
 
-            m_RefireTimer = m_TurretProperties.RateOfFire;
+            m_RefireTimer = m_TurretProperties.RateOfFire * m_RateUpgradeFactor;
+            Debug.Log($"RateOfFire before: {m_TurretProperties.RateOfFire} /n After: {m_RefireTimer}");
 
             // тут звук
             if (m_FireSound != null && m_FireSound.loadState == AudioDataLoadState.Loaded)
