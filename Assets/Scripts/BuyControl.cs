@@ -6,12 +6,19 @@ namespace TowerDefence
     {
         private RectTransform m_RectTransform;
 
+        #region Unity events
         private void Awake()
         {
             m_RectTransform = GetComponent<RectTransform>();
             BuildPlace.OnClickEvent += MoveToBuildPlace;   
             gameObject.SetActive(false);
         }
+
+        private void OnDestroy()
+        {
+            BuildPlace.OnClickEvent -= MoveToBuildPlace;
+        }
+        #endregion
 
         private void MoveToBuildPlace(Transform buildPlace)
         {
@@ -30,11 +37,6 @@ namespace TowerDefence
             {
                 tbc.SetBuildPlace(buildPlace);
             }
-        }
-
-        private void OnDestroy()
-        {
-            BuildPlace.OnClickEvent -= MoveToBuildPlace;
         }
     }
 }

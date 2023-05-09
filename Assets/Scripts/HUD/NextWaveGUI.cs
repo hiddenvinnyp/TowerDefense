@@ -15,22 +15,32 @@ namespace TowerDefence
         private void Start()
         {
             m_Manager = FindObjectOfType<EnemyWaveManager>();
-            EnemyWave.OnWavePrepare += (float time) =>
-            {
-                m_TimeToNextWave = time;
-                m_Slider.maxValue = time;
-
-            };
-            EnemyWave.OnLastWave += () =>
-            {
-                gameObject.GetComponentInChildren<Button>().interactable = false;
-                m_BonusAmountText.text = "0";
-                m_Slider.value = 0;
-                enabled = false;
-            };
+            EnemyWave.OnWavePrepare += NextWave;
+            EnemyWave.OnLastWave += LastWave;
         }
 
-        public void CallWave()
+        private void OnDestroy()
+        {
+            EnemyWave.OnWavePrepare -= NextWave;
+            EnemyWave.OnLastWave -= LastWave;
+        }
+
+        private void NextWave(float time)
+        {
+            m_TimeToNextWave = time;
+            m_Slider.maxValue = time;
+
+        }
+
+        private void LastWave()
+        {
+            gameObject.GetComponentInChildren<Button>().interactable = false;
+            m_BonusAmountText.text = "0";
+            m_Slider.value = 0;
+            enabled = false;
+        }
+
+    public void CallWave()
         {
             m_Manager.ForceNextWave();
         }

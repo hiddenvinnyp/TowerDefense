@@ -376,12 +376,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 1
-  m_ComplitionData:
+  m_CompletionData:
   - Episode: {fileID: 11400000, guid: e70125a105118954eada35b1db3c20dd, type: 2}
     Score: 0
-  - Episode: {fileID: 11400000, guid: 510700985226de84f83f4e84d9063aa3, type: 2}
-    Score: 0
   - Episode: {fileID: 11400000, guid: 281d2e12e85b2e14aa240d5370860e68, type: 2}
+    Score: 0
+  - Episode: {fileID: 11400000, guid: 510700985226de84f83f4e84d9063aa3, type: 2}
     Score: 0
   - Episode: {fileID: 11400000, guid: 6cb6acc1bbb5f2d49918432c125edefb, type: 2}
     Score: 0
@@ -394,8 +394,6 @@ MonoBehaviour:
   - Episode: {fileID: 11400000, guid: 4d65136dcd1b9c146842d0b05ae9b376, type: 2}
     Score: 0
   - Episode: {fileID: 11400000, guid: e01cebc30b190a045bfbbdd54734d5bc, type: 2}
-    Score: 0
-  - Episode: {fileID: 11400000, guid: 6cb6acc1bbb5f2d49918432c125edefb, type: 2}
     Score: 0
 --- !u!4 &246890448
 Transform:

@@ -10,7 +10,6 @@ namespace TowerDefence
         [SerializeField] private Image m_Icon;
         [SerializeField] private TextMeshProUGUI m_LevelText, m_CostText;
         [SerializeField] private Button m_BuyButton;
-
         [SerializeField] private UpgradeAsset m_UpgradeAsset;
 
         private int m_CurrentCost;

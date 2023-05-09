@@ -11,10 +11,14 @@ namespace TowerDefence
         [SerializeField] private int m_NeedPoints = 1;
         [SerializeField] private TextMeshProUGUI m_NeedPointsText;
 
-        internal void TryActivate()
+        /// <summary>
+        /// Try activate a branch level. It needs complite the previous level and 
+        /// have some points for activation.
+        /// </summary>
+        public void TryActivate()
         {
             gameObject.SetActive(m_RootLevel.IsComplete);
-            if (m_NeedPoints > MapComplition.Instance.TotalScore)
+            if (m_NeedPoints > MapCompletion.Instance.TotalScore)
             {
                 m_NeedPointsText.text = m_NeedPoints.ToString();
             } else

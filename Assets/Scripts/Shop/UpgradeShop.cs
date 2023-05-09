@@ -36,7 +36,7 @@ namespace TowerDefence
 
         public void UpdateMoney()
         {
-            m_Money = MapComplition.Instance.TotalScore;
+            m_Money = MapCompletion.Instance.TotalScore;
             m_Money -= Upgrades.GetTotalCost();
             m_MoneyText.text = m_Money.ToString();
 

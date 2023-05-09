@@ -24,7 +24,7 @@ namespace TowerDefence
                 {
                     m_LevelScore--;
                 }
-                MapComplition.SaveEpisodeResult(m_LevelScore);
+                MapCompletion.SaveEpisodeResult(m_LevelScore);
             });
 
             //локальная функция

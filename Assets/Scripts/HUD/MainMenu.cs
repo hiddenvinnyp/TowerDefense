@@ -13,12 +13,12 @@ namespace TowerDefence {
             if (m_RequestPanel != null)
                 m_RequestPanel.SetActive(false);
             if (m_ContinueButton != null)
-                m_ContinueButton.interactable = FileHandler.HasFile(MapComplition.filename);
+                m_ContinueButton.interactable = FileHandler.HasFile(MapCompletion.filename);
         }
 
         public void NewGame()
         {
-            if (FileHandler.HasFile(MapComplition.filename))
+            if (FileHandler.HasFile(MapCompletion.filename))
             {
                 m_RequestPanel.SetActive(true);
                 foreach (var button in GetComponentsInChildren<Button>())

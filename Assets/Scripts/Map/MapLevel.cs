@@ -23,7 +23,7 @@ namespace TowerDefence
 
         public void Initialize()
         {
-            m_Score = MapComplition.Instance.GetEpisodeScore(m_Episode);
+            m_Score = MapCompletion.Instance.GetEpisodeScore(m_Episode);
             m_ResultPanel.gameObject.SetActive(m_Score > 0);
             for (int i = 0; i < m_Score; i++)
             {

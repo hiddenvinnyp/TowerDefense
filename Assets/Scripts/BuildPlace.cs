@@ -14,7 +14,6 @@ namespace TowerDefence
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log($"pressed {transform.root.name}");
             OnClickEvent(transform.root);
         }
     }
