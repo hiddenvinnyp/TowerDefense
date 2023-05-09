@@ -17,7 +17,7 @@ namespace TowerDefence
 
         private void Start()
         {
-            TDPlayer.GoldUpdateSubscribe(GoldStatusCheck); // подписки в Awake
+            TDPlayer.Instance.GoldUpdateSubscribe(GoldStatusCheck); // подписки в Awake
             m_Text.text = m_TowerAsset.GoldCost.ToString();
             m_BuyButton.GetComponent<Image>().sprite = m_TowerAsset.GUISprite;
         }
@@ -35,11 +35,6 @@ namespace TowerDefence
         {
             TDPlayer.Instance.TryBuild(m_TowerAsset, m_BuildPlace);
             BuildPlace.HideControls();
-        }
-
-        private void OnDestroy()
-        {
-            TDPlayer.GoldUpdateUnSubscribe(GoldStatusCheck);
         }
     }
 }

@@ -13,6 +13,8 @@ namespace TowerDefence
         [Header("Stats")]
         public float MoveSpeed = 1;
         public int Hitpoints;
+        public int Armor = 0;
+        public Enemy.ArmorType ArmorType;
         public int Score;
         public float ColliderRadius;
         public int Damage = 1;

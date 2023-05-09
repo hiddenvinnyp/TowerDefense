@@ -7,28 +7,18 @@ namespace TowerDefence
     public class TDPlayer : Player
     {
         public static new TDPlayer Instance => Player.Instance as TDPlayer;
-        private static event Action<int> OnGoldUpdate;
-        public static void GoldUpdateSubscribe(Action<int> action)
+        private event Action<int> OnGoldUpdate;
+        public void GoldUpdateSubscribe(Action<int> action)
         {
             OnGoldUpdate += action;
             action(Instance.m_Gold);
         }
 
-        public static void GoldUpdateUnSubscribe(Action<int> action)
-        {
-            OnGoldUpdate -= action;
-        }
-
-        public static event Action<int> OnLifeUpdate;
-        public static void LifeUpdateSubscribe(Action<int> action)
+        public event Action<int> OnLifeUpdate;
+        public void LifeUpdateSubscribe(Action<int> action)
         {
             OnLifeUpdate += action;
             action(Instance.NumLives);
-        }
-
-        public static void LifeUpdateUnSubscribe(Action<int> action)
-        {
-            OnLifeUpdate -= action;
         }
 
         [SerializeField] private int m_Gold;
@@ -52,8 +42,7 @@ namespace TowerDefence
             {
                 ChangeGold(-towerAsset.GoldCost);
                 var tower = Instantiate(m_TowerPrefab, buildPlace.position, Quaternion.identity);
-                tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.TowerSprite;
-                tower.GetComponentInChildren<Turret>().TurretProperties = towerAsset.Properties;
+                tower.Use(towerAsset);
                 Destroy(buildPlace.gameObject);
             }
         }

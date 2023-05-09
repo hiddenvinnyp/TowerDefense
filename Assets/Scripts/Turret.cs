@@ -10,7 +10,7 @@ namespace SpaceShooter
         public TurretMode Mode => m_Mode;
 
         [SerializeField] private TurretProperties m_TurretProperties;
-        public TurretProperties TurretProperties { set { m_TurretProperties = value; } }
+        //public TurretProperties TurretProperties { set { m_TurretProperties = value; } }
 
         [SerializeField] private UpgradeAsset m_RateofFireUpgrade;
         [SerializeField] private float m_RateofFireUpgradeFactor = 0.01f;

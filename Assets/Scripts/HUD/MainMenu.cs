@@ -26,8 +26,7 @@ namespace TowerDefence {
                     button.interactable = false;
                 }
             } else
-            {
-                
+            {                
                 SceneManager.LoadScene(1);
             }            
         }

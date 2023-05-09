@@ -1,4 +1,5 @@
 using SpaceShooter;
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -56,6 +57,17 @@ namespace TowerDefence
         {
             Gizmos.color = m_GizmosColor;
             Gizmos.DrawSphere(transform.position, m_Radius);
+        }
+
+        public void Use(TowerAsset towerAsset)
+        {
+            GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.TowerSprite;
+            m_Turrents = GetComponentsInChildren<Turret>();
+
+            foreach (var turret in m_Turrents)
+            {
+                turret.AssignLoadOut(towerAsset.Properties);
+            }
         }
     }
 }

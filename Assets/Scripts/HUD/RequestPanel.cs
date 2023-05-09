@@ -9,6 +9,7 @@ namespace TowerDefence
         public void ResetSave()
         {
             FileHandler.Reset(MapComplition.filename);
+            FileHandler.Reset(Upgrades.filename);
             SceneManager.LoadScene(1);
         }
 

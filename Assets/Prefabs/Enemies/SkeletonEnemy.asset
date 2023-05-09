@@ -17,6 +17,8 @@ MonoBehaviour:
   AnimatorController: {fileID: 9100000, guid: 00dc060c83fef3c40b7935adc7c1fac7, type: 2}
   MoveSpeed: 1.9
   Hitpoints: 15
+  Armor: 2
+  ArmorType: 2
   Score: 15
   ColliderRadius: 0.12
   Damage: 1

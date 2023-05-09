@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TurretIce
   m_EditorClassIdentifier: 
   m_TurretMode: 0
-  m_ProjectilePrefab: {fileID: 3238257076385601942, guid: 7853de8267b3bfd4eaf0aa9ba39c27dc, type: 3}
+  m_ProjectilePrefab: {fileID: 7793888334819420371, guid: 7853de8267b3bfd4eaf0aa9ba39c27dc, type: 3}
   m_RateOfFire: 0.35
   m_EnergyUsage: 0
   m_AmmoUsage: 0

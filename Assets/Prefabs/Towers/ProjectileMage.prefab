@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3238257076385601941}
-  - component: {fileID: 3238257076385601942}
+  - component: {fileID: -6744693920879770267}
   m_Layer: 0
   m_Name: ProjectileMage
   m_TagString: Untagged
@@ -117,7 +117,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3238257076385601942
+--- !u!114 &-6744693920879770267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,15 +126,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3238257076385601943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92c697dd50d27eb4db81dd1b6a3ebd02, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f91422ecd925b542997ef3320c641ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
   m_Velocity: 12
-  m_Lifetime: 1
-  m_Damage: 6
+  m_Lifetime: 2
+  m_Damage: 9
   m_ImpactEffectPrefab: {fileID: 0}
   m_IsAOE: 0
   m_AOEPrefab: {fileID: 0}
   m_VelocityUpgrade: {fileID: 11400000, guid: a8b7b6364a26d4049a7dbe6f3c37ed93, type: 2}
   m_VelocityUpgradeFactor: 1
+  m_DamageType: 1
