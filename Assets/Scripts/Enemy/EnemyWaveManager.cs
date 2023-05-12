@@ -1,11 +1,11 @@
 using System;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 namespace TowerDefence
 {
     public class EnemyWaveManager : MonoBehaviour
     {
+        public static event Action<Enemy> OnEnemySpawn;
         public event Action OnAllWavesDead;
 
         [SerializeField] private Enemy m_EnemyPrefab;
@@ -39,6 +39,7 @@ namespace TowerDefence
                         enemy.Use(asset);
                         enemy.GetComponent<PathPatrol>().SetPath(m_Paths[pathIndex]);
                         m_ActiveEnemyCount++;
+                        OnEnemySpawn?.Invoke(enemy);
                     }
                 }
                 else

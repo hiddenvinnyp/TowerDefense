@@ -37,11 +37,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6994086441038396500, guid: 4f3bdb61701314c40ab907b965797401, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 70
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6994086441038396500, guid: 4f3bdb61701314c40ab907b965797401, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 70
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6994086441038396500, guid: 4f3bdb61701314c40ab907b965797401, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73,11 +73,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6994086441038396500, guid: 4f3bdb61701314c40ab907b965797401, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6994086441038396500, guid: 4f3bdb61701314c40ab907b965797401, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.6848
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6994086441038396500, guid: 4f3bdb61701314c40ab907b965797401, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6994086441038396501, guid: 4f3bdb61701314c40ab907b965797401, type: 3}
       propertyPath: m_Name
-      value: TowerBuyControl
+      value: ArcherTowerBuyControl Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6994086441038396503, guid: 4f3bdb61701314c40ab907b965797401, type: 3}
       propertyPath: m_TowerAsset

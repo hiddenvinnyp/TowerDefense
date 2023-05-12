@@ -62,6 +62,7 @@ namespace TowerDefence
             DisableAll<Tower>();
             DisableAll<Projectile>();
             DisableAll<NextWaveGUI>();
+            TDPlayer.Instance.ManaPerTime = 0;
         }
 
         

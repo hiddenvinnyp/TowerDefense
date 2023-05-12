@@ -7,6 +7,7 @@ namespace TowerDefence
     public class TowerBuyControl : MonoBehaviour
     {
         [SerializeField] private TowerAsset m_TowerAsset;
+        public void SetTowerAsset(TowerAsset towerAsset) { m_TowerAsset = towerAsset; }
         [SerializeField] private TextMeshProUGUI m_Text;
         [SerializeField] private Button m_BuyButton;
         [SerializeField] private Transform m_BuildPlace;
@@ -24,6 +25,7 @@ namespace TowerDefence
 
         private void GoldStatusCheck(int gold)
         {
+            if (m_BuyButton == null) return;
             if (gold >= m_TowerAsset.GoldCost != m_BuyButton.interactable)
             {
                 m_BuyButton.interactable = !m_BuyButton.interactable;

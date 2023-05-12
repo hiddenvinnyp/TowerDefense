@@ -8,7 +8,8 @@ namespace TowerDefence
         public enum UpdateSource
         {
             Gold,
-            Life
+            Life,
+            Mana
         }
 
         public UpdateSource source;
@@ -23,6 +24,9 @@ namespace TowerDefence
                     break;
                 case UpdateSource.Life:
                     TDPlayer.Instance.LifeUpdateSubscribe(UpdateText);
+                    break;
+                case UpdateSource.Mana:
+                    TDPlayer.Instance.ManaUpdateSubscribe(UpdateText);
                     break;
             }            
         }

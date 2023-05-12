@@ -6,7 +6,19 @@ namespace TowerDefence
 {
     public class BuildPlace : MonoBehaviour, IPointerDownHandler
     {
-        public static event Action<Transform> OnClickEvent;
+        [SerializeField] private TowerAsset[] m_BuildableTowers;
+        public TowerAsset[] BuildableTowers { get { return m_BuildableTowers; } }
+
+        public void SetBuildableTowers(TowerAsset[] towers)
+        {
+            if (towers == null || towers.Length == 0)
+            {
+                Destroy(transform.parent.gameObject);
+            } else
+                m_BuildableTowers = towers;
+        }
+
+        public static event Action<BuildPlace> OnClickEvent;
         public static void HideControls()
         {
             OnClickEvent(null);
@@ -14,7 +26,7 @@ namespace TowerDefence
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
-            OnClickEvent(transform.root);
+            OnClickEvent(this);
         }
     }
 }

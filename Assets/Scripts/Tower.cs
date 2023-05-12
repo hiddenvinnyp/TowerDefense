@@ -68,6 +68,8 @@ namespace TowerDefence
             {
                 turret.AssignLoadOut(towerAsset.Properties);
             }
+
+            GetComponentInChildren<BuildPlace>().SetBuildableTowers(towerAsset.m_UpgradesTo);
         }
     }
 }

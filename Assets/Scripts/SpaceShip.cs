@@ -32,6 +32,14 @@ namespace SpaceShooter
         [SerializeField] private float m_MaxLinearVelocity;
         public float Speed => m_MaxLinearVelocity;
 
+        private float m_MaxVelocityBackup;
+        public void HalfMaxLinearVelocity() 
+        { 
+            m_MaxVelocityBackup = m_MaxLinearVelocity; 
+            m_MaxLinearVelocity /= 2; 
+        }
+        public void RestoreMaxLinearVelocity() { m_MaxLinearVelocity = m_MaxVelocityBackup; }
+
         /// <summary>
         /// Max angular velocity in grad per sec.
         /// </summary>
