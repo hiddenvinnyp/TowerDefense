@@ -38,5 +38,10 @@ namespace TowerDefence
             TDPlayer.Instance.TryBuild(m_TowerAsset, m_BuildPlace);
             BuildPlace.HideControls();
         }
+
+        private void OnDisable()
+        {
+            Destroy(gameObject);
+        }
     }
 }

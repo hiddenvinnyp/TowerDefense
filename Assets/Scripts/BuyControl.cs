@@ -51,8 +51,7 @@ namespace TowerDefence
             if (buildPlace)
             {
                 Vector2 position = Camera.main.WorldToScreenPoint(buildPlace.transform.root.position);
-                m_RectTransform.anchoredPosition = position;
-                //gameObject.SetActive(true);
+                m_RectTransform.position = position;
 
                 m_ActiveControls = new List<TowerBuyControl>();
                 foreach (var asset in buildPlace.BuildableTowers) if (asset.IsAvaliable())
@@ -69,7 +68,8 @@ namespace TowerDefence
                     for (int i = 0; i < m_ActiveControls.Count; i++)
                     {
                         var offset = Quaternion.AngleAxis(angle * i, Vector3.forward) * (Vector3.up * 120);
-                        m_ActiveControls[i].transform.position += offset;
+                       // m_ActiveControls[i].transform.position += offset;
+                        m_ActiveControls[i].GetComponent<RectTransform>().localPosition = offset;
                     }
 
                     foreach (var tbc in GetComponentsInChildren<TowerBuyControl>())

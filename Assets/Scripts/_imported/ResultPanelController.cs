@@ -1,4 +1,5 @@
 using TMPro;
+using TowerDefence;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,8 @@ namespace SpaceShooter
 
         [SerializeField] private TextMeshProUGUI m_Result;
         [SerializeField] private TextMeshProUGUI m_ButtonNextText;
+        [SerializeField] private Sound m_WinSound = Sound.PlayerWin;
+        [SerializeField] private Sound m_LoseSound = Sound.PlayerLose;
 
         // Определять поведение кнопки: если успешно завершили уровень, то следующий;
         // если нет, то рестарт текущего уровня.
@@ -26,15 +29,24 @@ namespace SpaceShooter
         public void ShowResults(bool success)
         {
             gameObject.SetActive(true);
+            PlaySound(success);
 
             m_Success = success;
             m_Result.text = success ? "Win" : "Lose";
             m_ButtonNextText.text = success ? "Next" : "Restart";
         }
 
+        private void PlaySound(bool success)
+        {
+            if (success)
+                m_WinSound.Play();
+            else m_LoseSound.Play();
+        }
+
         public void ShowResults(PlayerStatistics levelResults, bool success)
         {
             gameObject.SetActive(true);
+            PlaySound(success);
 
             m_Success = success;
             m_Result.text = success ? "Win" : "Lose";

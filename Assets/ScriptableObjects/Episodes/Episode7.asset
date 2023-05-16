@@ -15,4 +15,5 @@ MonoBehaviour:
   m_EpisodeName: The Village
   m_Levels:
   - Level_01
+  - CampaignWin
   m_PreviewImage: {fileID: 0}

@@ -73,7 +73,6 @@ namespace SpaceShooter
                 projectile.SetParentShooter(m_Ship);
 
             m_RefireTimer = m_TurretProperties.RateOfFire * m_RateUpgradeFactor;
-            Debug.Log($"RateOfFire before: {m_TurretProperties.RateOfFire} /n After: {m_RefireTimer}");
 
             // тут звук
             if (m_FireSound != null && m_FireSound.loadState == AudioDataLoadState.Loaded)

@@ -63,6 +63,7 @@ namespace TowerDefence
         public void ChangeGold(int gold)
         {
             m_Gold += gold;
+            Debug.Log(m_Gold);
             OnGoldUpdate(m_Gold);
         }
         public void ReduceLife(int hits)

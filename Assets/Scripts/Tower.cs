@@ -11,8 +11,10 @@ namespace TowerDefence
         [SerializeField] private UpgradeAsset m_RadiusUpgrade;
         [SerializeField] private float m_RadiusUpgradeFactor = 0.1f;
         [SerializeField] private Color m_GizmosColor;
+
+        [SerializeField] private float m_Lead;
         private Turret[] m_Turrents;
-        private Destructible m_Target = null;
+        private Rigidbody2D m_Target = null;
 
         #region UnityEvents
         private void Start()
@@ -34,7 +36,8 @@ namespace TowerDefence
                 {
                     foreach (var turret in m_Turrents)
                     {
-                        turret.transform.up = targetVector;
+                        turret.transform.up = 
+                            m_Target.transform.position - turret.transform.position + (Vector3)m_Target.velocity * m_Lead;
                         turret.Fire();
                     }
                 } else
@@ -47,7 +50,7 @@ namespace TowerDefence
                 var enter = Physics2D.OverlapCircle(transform.position, m_Radius);
                 if (enter)
                 {
-                    m_Target = enter.transform.root.GetComponent<Destructible>();                    
+                    m_Target = enter.transform.root.GetComponent<Rigidbody2D>();                    
                 }
             }
         }

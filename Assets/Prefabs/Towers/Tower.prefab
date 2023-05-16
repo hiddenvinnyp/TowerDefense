@@ -51,6 +51,7 @@ MonoBehaviour:
   m_RadiusUpgrade: {fileID: 11400000, guid: 3268df020b278064f9462e5cbc7da853, type: 2}
   m_RadiusUpgradeFactor: 0.2
   m_GizmosColor: {r: 0.8, g: 0.20784311, b: 0.7214976, a: 0.44705883}
+  m_Lead: 0
 --- !u!1 &36026128927779954
 GameObject:
   m_ObjectHideFlags: 0

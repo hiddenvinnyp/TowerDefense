@@ -17,7 +17,7 @@ namespace TowerDefence
         {
             if (--m_ActiveEnemyCount == 0)
             {
-                    ForceNextWave();              
+                ForceNextWave();
             }
         }
 
@@ -38,7 +38,7 @@ namespace TowerDefence
                         enemy.OnEnd += RecordEnemyDead;
                         enemy.Use(asset);
                         enemy.GetComponent<PathPatrol>().SetPath(m_Paths[pathIndex]);
-                        m_ActiveEnemyCount++;
+                        m_ActiveEnemyCount +=1;
                         OnEnemySpawn?.Invoke(enemy);
                     }
                 }

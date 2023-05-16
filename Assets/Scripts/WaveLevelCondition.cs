@@ -10,8 +10,13 @@ namespace TowerDefence
         private void Start()
         {
             FindObjectOfType<EnemyWaveManager>().OnAllWavesDead += () => 
-            { 
-                m_IsCompleted = true; 
+            {
+                if (TDPlayer.Instance.NumLives > 0)
+                {
+                    m_IsCompleted = true;
+                }
+                else
+                    m_IsCompleted = false;
             };
         }
 
