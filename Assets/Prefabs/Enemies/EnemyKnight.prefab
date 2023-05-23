@@ -240,7 +240,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_ExplosionPrefab: {fileID: 0}
+  m_ExplosionPrefab: {fileID: 5005995378240641861, guid: 8092d1318ce2ade439c399c6d4f4e2ac, type: 3}
   m_TeamId: 0
   m_ScoreValue: 0
   m_PreviewImage: {fileID: 0}

@@ -17,6 +17,8 @@ namespace TowerDefence
             [SerializeField] private int m_Damage = 2;
             public void SetDamage(int factor) { m_Damage += m_Damage * factor; }
             [SerializeField] private Color m_TargetingColor;
+            [SerializeField] private float m_Radius = 1f;
+            [SerializeField] private GameObject m_Circle;
 
             public void TryUse()
             {
@@ -24,18 +26,22 @@ namespace TowerDefence
                 {
                     TDPlayer.Instance.ChangeMana(-m_Cost);
 
+                    GameObject circle = Instantiate(m_Circle);
+                    circle.transform.localScale *= m_Radius;
                     ClickProtection.Instance.Activate((Vector2 v) =>
                     {
+
                         Vector3 position = v;
                         position.z = Camera.main.transform.position.z;
                         position = Camera.main.ScreenToWorldPoint(position);
-                        foreach (var collider in Physics2D.OverlapCircleAll(position, 5))
+                        foreach (var collider in Physics2D.OverlapCircleAll(position, m_Radius))
                         {
                             if (collider.transform.parent.TryGetComponent<Enemy>(out var enemy))
                             {
                                 enemy.TakeDamage(m_Damage, TDProjectile.DamageType.Magic);
                             }
                         }
+                        Destroy(circle);
                     });
                 }
             }

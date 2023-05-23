@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MageTower
   m_EditorClassIdentifier: 
   GoldCost: 25
-  TowerSprite: {fileID: 21300000, guid: 298636722737c4b41816506cd4bc994f, type: 3}
+  TowerSprite: {fileID: 21300000, guid: fc7176bad65e3d0499fa87cfc50a1d9d, type: 3}
   GUISprite: {fileID: 21300000, guid: 1ff55c4a74fcf9b429b49b787ead3395, type: 3}
   Properties: {fileID: 11400000, guid: 3e64d2e78ca3f2144b5d02acececccad, type: 2}
   RequiredUpgrade: {fileID: 11400000, guid: 108f2e57293ca014cb54ba8ec2d02312, type: 2}

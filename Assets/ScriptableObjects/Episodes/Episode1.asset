@@ -15,4 +15,4 @@ MonoBehaviour:
   m_EpisodeName: The Village
   m_Levels:
   - Level_01
-  m_PreviewImage: {fileID: 0}
+  m_PreviewImage: {fileID: 21300000, guid: c0540b07305267d4d8352a51afa6422b, type: 3}

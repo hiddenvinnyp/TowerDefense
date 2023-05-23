@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EpisodeName: The Water Town
   m_Levels:
-  - Level_02
-  m_PreviewImage: {fileID: 0}
+  - Level_02-02
+  m_PreviewImage: {fileID: 21300000, guid: aa8ea56f23e9192448d153c67effc75c, type: 3}

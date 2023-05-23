@@ -1,6 +1,8 @@
 using SpaceShooter;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System;
 
 namespace TowerDefence
@@ -110,7 +112,7 @@ namespace TowerDefence
             m_Destructible.ApplyDamage(ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_Armor));
         }
     }
-
+#if UNITY_EDITOR
     [CustomEditor(typeof(Enemy))]
     public class EnemyInspector : Editor 
     {
@@ -122,4 +124,5 @@ namespace TowerDefence
                 (target as Enemy).Use(asset);
         }
     }
+#endif
 }

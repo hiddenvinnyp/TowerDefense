@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1aed3e55dd5bad46a9a78bdedb139b4, type: 3}
   m_Name: Episode4
   m_EditorClassIdentifier: 
-  m_EpisodeName: The Village
+  m_EpisodeName: The Orc Village
   m_Levels:
-  - Level_01
-  m_PreviewImage: {fileID: 0}
+  - Level_04
+  m_PreviewImage: {fileID: 21300000, guid: 61643e8cb128f71429114983b5a95657, type: 3}

@@ -304,7 +304,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 752758188821953070}
         m_TargetAssemblyTypeName: TowerDefence.MapLevel, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: LoadEpisodeCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -324,6 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 677661505526852060}
   - component: {fileID: 752758188821953070}
+  - component: {fileID: 890412178598668132}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -360,11 +361,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d547d7bdd39d1664a8c99ca8e0f1ab92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Episode: {fileID: 11400000, guid: e70125a105118954eada35b1db3c20dd, type: 2}
   m_ResultPanel: {fileID: 1781183963}
   m_ResultImages:
   - {fileID: 7240841984795015303}
   - {fileID: 3157734486811480721}
   - {fileID: 5084020535198076995}
+  m_EpisodeCard: {fileID: 0}
+  m_EpisodeName: {fileID: 0}
+  m_PreviewImage: {fileID: 0}
+  m_LoadLevelButton: {fileID: 0}
+--- !u!114 &890412178598668132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677661505526852061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e1ad640f485624ba0bce4c335c4a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HoverSprite: {fileID: 21300000, guid: c0ea062efac383347bd84511320f8bcb, type: 3}
 --- !u!1 &677661506666787385
 GameObject:
   m_ObjectHideFlags: 0

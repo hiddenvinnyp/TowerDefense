@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1aed3e55dd5bad46a9a78bdedb139b4, type: 3}
   m_Name: Episode6
   m_EditorClassIdentifier: 
-  m_EpisodeName: The Village
+  m_EpisodeName: The Citadel
   m_Levels:
-  - Level_01
-  m_PreviewImage: {fileID: 0}
+  - Level_06
+  m_PreviewImage: {fileID: 21300000, guid: d30906451c68911418b29a6afc3d6b15, type: 3}

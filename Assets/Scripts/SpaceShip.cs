@@ -204,10 +204,11 @@ namespace SpaceShooter
         private void UpdateRigidBody()
         {
             m_Rigidbody.AddForce(m_Thrust * ThrustControl * transform.up * Time.fixedDeltaTime, ForceMode2D.Force);
-            m_Rigidbody.AddForce(-m_Rigidbody.velocity * (m_Thrust / m_MaxLinearVelocity) * Time.fixedDeltaTime, ForceMode2D.Force);
-            
+            Vector2 force = Vector2.ClampMagnitude(-m_Rigidbody.velocity * (m_Thrust / m_MaxLinearVelocity) * Time.fixedDeltaTime, 100f);
+            m_Rigidbody.AddForce(force, ForceMode2D.Force);
+
             m_Rigidbody.AddTorque(TorqueControl * m_Mobility * Time.fixedDeltaTime, ForceMode2D.Force);
-            m_Rigidbody.AddTorque(-m_Rigidbody.angularVelocity * (m_Mobility / m_MaxAngularVelocity) * Time.fixedDeltaTime, ForceMode2D.Force);
+            m_Rigidbody.AddTorque(Mathf.Clamp(-m_Rigidbody.angularVelocity * (m_Mobility / m_MaxAngularVelocity) * Time.fixedDeltaTime, 0f, 50f), ForceMode2D.Force);
         }
 
         /*private void InitOffensive()

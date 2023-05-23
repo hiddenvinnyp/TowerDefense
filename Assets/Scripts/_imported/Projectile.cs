@@ -1,7 +1,9 @@
 using SpaceShooter;
 using TowerDefence;
+#if UNITY_EDITOR
 using Unity.VisualScripting;
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace SpaceShooter
@@ -133,7 +135,7 @@ namespace SpaceShooter
         }
     }
 }
-
+#if UNITY_EDITOR
 namespace TowerDefence
 {
     [CustomEditor(typeof(Projectile))]
@@ -151,3 +153,4 @@ namespace TowerDefence
         }
     }
 }
+#endif

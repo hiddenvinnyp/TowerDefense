@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 394283685885619890}
   - component: {fileID: 463055977355967808}
   - component: {fileID: 873504130211235690}
+  - component: {fileID: 4537330733369422003}
   m_Layer: 0
   m_Name: BranchLevel
   m_TagString: Untagged
@@ -131,11 +132,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d547d7bdd39d1664a8c99ca8e0f1ab92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Episode: {fileID: 0}
   m_ResultPanel: {fileID: 873504129509061301}
   m_ResultImages:
   - {fileID: 7522115335523352553}
   - {fileID: 2868170268922467839}
   - {fileID: 5373180135058315053}
+  m_EpisodeCard: {fileID: 0}
+  m_EpisodeName: {fileID: 0}
+  m_PreviewImage: {fileID: 0}
+  m_LoadLevelButton: {fileID: 0}
 --- !u!114 &873504130211235690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +157,19 @@ MonoBehaviour:
   m_RootLevel: {fileID: 0}
   m_NeedPoints: 1
   m_NeedPointsText: {fileID: 873504129342830292}
+--- !u!114 &4537330733369422003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394283685885619891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e1ad640f485624ba0bce4c335c4a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HoverSprite: {fileID: 21300000, guid: c0ea062efac383347bd84511320f8bcb, type: 3}
 --- !u!1 &873504128616583579
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +636,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 463055977355967808}
         m_TargetAssemblyTypeName: TowerDefence.MapLevel, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: LoadEpisodeCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

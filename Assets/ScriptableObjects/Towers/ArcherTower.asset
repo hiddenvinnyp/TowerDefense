@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: ArcherTower
   m_EditorClassIdentifier: 
   GoldCost: 15
-  TowerSprite: {fileID: 21300000, guid: 0d1dc428e29b59d4da665429794be749, type: 3}
+  TowerSprite: {fileID: 21300000, guid: e1fbeb047ae5b714eb68bf6d1423fbbc, type: 3}
   GUISprite: {fileID: 21300000, guid: ef25b92a8e4b2644b8420de820e6c11f, type: 3}
   Properties: {fileID: 11400000, guid: 1df4038f631ce32429239c489b417e0d, type: 2}
+  RequiredUpgrade: {fileID: 0}
+  RequiredUpgradeLevel: 0
+  m_UpgradesTo: []

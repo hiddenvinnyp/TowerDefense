@@ -1,5 +1,6 @@
 using SpaceShooter;
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
@@ -11,6 +12,13 @@ namespace TowerDefence
         [SerializeField] private Episode m_Episode;
         [SerializeField] private RectTransform m_ResultPanel;
         [SerializeField] private Image[] m_ResultImages;
+
+        [Header("Episode Card")]
+        [SerializeField] private GameObject m_EpisodeCard;
+        [SerializeField] private TextMeshProUGUI m_EpisodeName;
+        [SerializeField] private Image m_PreviewImage;
+        [SerializeField] private Button m_LoadLevelButton;
+
         private int m_Score;
         public int Score => m_Score;
 
@@ -29,6 +37,14 @@ namespace TowerDefence
             {
                 m_ResultImages[i].color = Color.white;
             }
+        }
+
+        public void LoadEpisodeCard()
+        {
+            m_EpisodeName.text = m_Episode.EpisodeName;
+            m_PreviewImage.sprite = m_Episode.PreviewImage;
+            m_LoadLevelButton.onClick.AddListener(LoadLevel);
+            m_EpisodeCard.SetActive(true);
         }
     }
 }

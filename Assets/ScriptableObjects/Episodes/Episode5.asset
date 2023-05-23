@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1aed3e55dd5bad46a9a78bdedb139b4, type: 3}
   m_Name: Episode5
   m_EditorClassIdentifier: 
-  m_EpisodeName: The Village
+  m_EpisodeName: The Stronghold
   m_Levels:
-  - Level_01
-  m_PreviewImage: {fileID: 0}
+  - Level_05
+  m_PreviewImage: {fileID: 21300000, guid: 49803da4e10b6dd47b3470a9e35c45a8, type: 3}

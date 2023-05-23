@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1aed3e55dd5bad46a9a78bdedb139b4, type: 3}
   m_Name: Episode7
   m_EditorClassIdentifier: 
-  m_EpisodeName: The Village
+  m_EpisodeName: The Winter House
   m_Levels:
-  - Level_01
+  - Level_07
   - CampaignWin
-  m_PreviewImage: {fileID: 0}
+  m_PreviewImage: {fileID: 21300000, guid: eb48857a6f8f0b24aa2a46758c8cf757, type: 3}

@@ -16,6 +16,8 @@ namespace SpaceShooter
         [SerializeField] private TextMeshProUGUI m_ButtonNextText;
         [SerializeField] private Sound m_WinSound = Sound.PlayerWin;
         [SerializeField] private Sound m_LoseSound = Sound.PlayerLose;
+        [SerializeField] private Image m_WinImage;
+        [SerializeField] private Image m_LoseImage;
 
         // Определять поведение кнопки: если успешно завершили уровень, то следующий;
         // если нет, то рестарт текущего уровня.
@@ -24,6 +26,8 @@ namespace SpaceShooter
         private void Start()
         {
             gameObject.SetActive(false);
+            m_WinImage.enabled = false;
+            m_LoseImage.enabled = false;
         }
 
         public void ShowResults(bool success)
@@ -32,8 +36,10 @@ namespace SpaceShooter
             PlaySound(success);
 
             m_Success = success;
-            m_Result.text = success ? "Win" : "Lose";
-            m_ButtonNextText.text = success ? "Next" : "Restart";
+            m_Result.text = success ? "Victory" : "Defeat";
+            m_ButtonNextText.text = success ? "Continue" : "Continue";
+            m_WinImage.enabled = success;
+            m_LoseImage.enabled = !success;
         }
 
         private void PlaySound(bool success)

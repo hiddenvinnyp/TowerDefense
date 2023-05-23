@@ -15,4 +15,4 @@ MonoBehaviour:
   m_EpisodeName: The Water Town
   m_Levels:
   - Level_02
-  m_PreviewImage: {fileID: 0}
+  m_PreviewImage: {fileID: 21300000, guid: d287ccd8a0b7b504aa3cbb77fdd73d67, type: 3}
