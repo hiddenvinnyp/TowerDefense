@@ -69,9 +69,9 @@ namespace SpaceShooter
                 return;
             }
 
-            GameObject explosion = Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
-            ParticleSystem particleSystem = explosion.GetComponent<ParticleSystem>();
-            totalDuration = particleSystem.main.duration + particleSystem.main.startLifetimeMultiplier;
+            Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
+            /*ParticleSystem particleSystem = explosion.GetComponent<ParticleSystem>();
+            totalDuration = particleSystem.main.duration + particleSystem.main.startLifetimeMultiplier;*/
             //Destroy(explosion, totalDuration);
             
             //Invoke("EventOnDeathInvoke", totalDuration);
